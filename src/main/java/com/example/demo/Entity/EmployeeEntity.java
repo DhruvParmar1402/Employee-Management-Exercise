@@ -16,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @Setter
 @Getter
+
 @NamedQuery(
         name = "EmployeeEntity.findByDepartment",
         query = "SELECT e FROM EmployeeEntity e JOIN e.departmentEntity d WHERE d.departmentName = :deptName"

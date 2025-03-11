@@ -24,7 +24,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/filterbyquery/{name}")
+    @GetMapping("/filterByQuery/{name}")
     public ResponseEntity<?> filterByNamedQuery(@PathVariable String name) {
         String decodedName = URLDecoder.decode(name, StandardCharsets.UTF_8);
         return ResponseEntity.ok(new ResponseDTO<List<EmployeeDTO>>(true, "Filterd with the help of the named query", employeeService.filterByQuery(decodedName)));
